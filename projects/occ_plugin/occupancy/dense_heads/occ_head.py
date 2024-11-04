@@ -32,7 +32,9 @@ class OccHead(nn.Module):
         class_num = 10,
         sample_from_voxel=False,
         sample_from_img=False,
-
+        train_cfg=None,
+        test_cfg=None,
+        fp16 = False
     ):
         super(OccHead, self).__init__()
         
