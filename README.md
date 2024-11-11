@@ -4,7 +4,7 @@
 [![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fa91EeueGHA)
 [![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-![Robust 3D Occupancy Prediction with 4D Imaging Radar](assets/)
+![Robust 3D Occupancy Prediction with 4D Imaging Radar](assets/radarocc_gif_demo_modality_cut.gif)
 
 ## Abstract 
 
