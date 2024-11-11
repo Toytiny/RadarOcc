@@ -1,21 +1,45 @@
+# RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar
+
+[![Static Badge](https://img.shields.io/badge/arXiv-PDF-green?style=flat&logo=arXiv&logoColor=green)](https://arxiv.org/abs/2306.17010) 
+[![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fa91EeueGHA)
+[![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+
+![Robust 3D Occupancy Prediction with 4D Imaging Radar](assets/)
+
+## Abstract 
+
+3D occupancy-based perception pipeline has significantly advanced autonomous
+driving by capturing detailed scene descriptions and demonstrating strong generalizability across various object categories and shapes. Current methods predominantly
+rely on LiDAR or camera inputs for 3D occupancy prediction. These methods are
+susceptible to adverse weather conditions, limiting the all-weather deployment of
+self-driving cars. To improve perception robustness, we leverage the recent advances in automotive radars and introduce a novel approach that utilizes 4D imaging
+radar sensors for 3D occupancy prediction. Our method, RadarOcc, circumvents
+the limitations of sparse radar point clouds by directly processing the 4D radar
+tensor, thus preserving essential scene details. RadarOcc innovatively addresses the
+challenges associated with the voluminous and noisy 4D radar data by employing
+Doppler bins descriptors, sidelobe-aware spatial sparsification, and range-wise
+self-attention mechanisms. To minimize the interpolation errors associated with
+direct coordinate transformations, we also devise a spherical-based feature encoding followed by spherical-to-Cartesian feature aggregation. We benchmark various
+baseline methods based on distinct modalities on the public K-Radar dataset. The
+results demonstrate RadarOcc’s state-of-the-art performance in radar-based 3D
+occupancy prediction and promising results even when compared with LiDARor camera-based methods. Additionally, we present qualitative evidence of the
+superior performance of 4D radar in adverse weather conditions and explore the
+impact of key pipeline components through ablation studies.
+
+**RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar**
+<br/>
+[Fangqiang Ding](https://toytiny.github.io/), [Xiangyu Wen](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu](https://lawrencez22.github.io/), [Yiming Li](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
+<br/>
+[[arXiv]](https://arxiv.org/abs/2405.14014) [[demo]](https://youtu.be/sa4gejcWMvk)
 
 
-# [NeurIPS 2024] RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar
 
-**Official implementation of RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar.**  
-
-<p align="center"> <img src="https://github.com/user-attachments/assets/38dae50c-0ffb-44de-8d2b-846eeb3ae4ad" width="400" alt="Snow" /> <img src="https://github.com/user-attachments/assets/bd7658a8-4ec4-4138-bf1a-16f83933dfeb" width="400" alt="Fog" /> <img src="https://github.com/user-attachments/assets/1aefbdfe-9920-449c-8ad4-0b44a5ce7c0c" width="400" alt="Night" /> </p>
-# Abstract 
-
-3D occupancy-based perception pipeline has significantly advanced autonomous driving by capturing detailed scene descriptions and demonstrating strong generalizability across various object categories and shapes. Current methods predominantly rely on LiDAR or camera inputs for 3D occupancy prediction. These methods are susceptible to adverse weather conditions, limiting the all-weather deployment of self-driving cars. To improve perception robustness, we leverage the recent advances in automotive radars and introduce a novel approach that utilizes 4D imaging radar sensors for 3D occupancy prediction. Our method, RadarOcc, circumvents the limitations of sparse radar point clouds by directly processing the 4D radar tensor, thus preserving essential scene details. RadarOcc innovatively addresses the challenges associated with the voluminous and noisy 4D radar data by employing Doppler bins descriptors, sidelobe-aware spatial sparsification, and range-wise self-attention mechanisms. To minimize the interpolation errors associated with direct coordinate transformations, we also devise a spherical-based feature encoding followed by spherical-to-Cartesian feature aggregation. We benchmark various baseline methods based on distinct modalities on the public K-Radar dataset. The results demonstrate RadarOcc's state-of-the-art performance in radar-based 3D occupancy prediction and promising results even when compared with LiDAR- or camera-based methods. Additionally, we present qualitative evidence of the superior performance of 4D radar in adverse weather conditions and explore the impact of key pipeline components through ablation studies.
-
-[arXiv](https://arxiv.org/abs/2405.14014)) 
-
-
-
-# News
-- **[2024/11/04]** network and training code uploaded
-- [TODO] illustration for dataset preparation and weight
+## News
+- [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
+- [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
+- [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
+- [2024-11-11] Our supplementary demo video is available online. See it via 👉[Youtube](https://youtu.be/sa4gejcWMvk).
+- [TODO] illustration for dataset preparation and weight.
 
 
 
