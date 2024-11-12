@@ -4,8 +4,39 @@
 [![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fa91EeueGHA)
 [![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
-![Robust 3D Occupancy Prediction with 4D Imaging Radar](assets/radarocc_gif_demo_modality_cut.gif)
+![Robust 3D Occupancy Prediction with 4D Imaging Radar](assets/qual_vis.png)
 
+
+This is the official repository of the **RadarOcc**, a pioneering appraoch for 3D occupancy prediction based on 4D imaging radar. 
+For technical details, please refer to our paper on NeurIPS 2024:
+
+**RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar**
+<br/>
+[Fangqiang Ding](https://toytiny.github.io/), [Xiangyu Wen](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu](https://lawrencez22.github.io/), [Yiming Li](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
+<br/>
+[[arXiv]](https://arxiv.org/abs/2405.14014) [[demo]](https://youtu.be/sa4gejcWMvk)
+
+
+
+## News
+- [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
+- [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
+- [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
+- [2024-11-11] Our supplementary demo video is available online. See it via 👉[Youtube](https://youtu.be/sa4gejcWMvk).
+- [TODO] illustration for dataset preparation and weight.
+
+## Citation
+If you find our work helpful to your research, please consider citing:
+
+
+```shell
+@article{Ding_2024_NeurIPS,
+  title={Robust 3D Occupancy Prediction with 4D Imaging Radar},
+  author={Ding, Fangqiang and Wen, Xiangyu and Zhu, Yunzhou and and Li, Yiming and Lu, Chris Xiaoxuan},
+  journal={Advances in Neural Information Processing Systems (NeurIPS)},
+  year={2024}
+}
+```
 ## Abstract 
 
 3D occupancy-based perception pipeline has significantly advanced autonomous
@@ -26,21 +57,10 @@ occupancy prediction and promising results even when compared with LiDARor camer
 superior performance of 4D radar in adverse weather conditions and explore the
 impact of key pipeline components through ablation studies.
 
-**RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar**
-<br/>
-[Fangqiang Ding](https://toytiny.github.io/), [Xiangyu Wen](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu](https://lawrencez22.github.io/), [Yiming Li](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
-<br/>
-[[arXiv]](https://arxiv.org/abs/2405.14014) [[demo]](https://youtu.be/sa4gejcWMvk)
-
-
-
-## News
-- [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
-- [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
-- [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
-- [2024-11-11] Our supplementary demo video is available online. See it via 👉[Youtube](https://youtu.be/sa4gejcWMvk).
-- [TODO] illustration for dataset preparation and weight.
-
+## Method
+| ![pipeline.jpg](assets/pipeline_fig_2.png) | 
+|:--:| 
+| ***Figure 1. Overall pipeline of RadarOcc**. The data volume reduction pre-processes the 4DRT into a lightweight sparse RT via Doppler bins encoding and sidelobe-aware spatial sparifying. We apply spherical-based feature encoding on the sparse RT and aggregate the spherical features using Cartesian voxel queries. The 3D occupancy volume is finally output via 3D occupancy decoding.* |
 
 
 # Getting Started
@@ -51,6 +71,10 @@ Please follow installation instructions from OpenOccupancy
 - [Prepare Dataset](docs/prepare_data.md)
 
 - [Training, Evaluation, Visualization](docs/trainval.md)
+
+## Qualitative results
+Here are some GIFs showing our qualitative results on 3D occupancy prediction. Some of these results can also be found in our supplementary [demo video](https://youtu.be/sa4gejcWMvk).
+
 
 
 # Acknowledgement
