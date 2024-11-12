@@ -64,7 +64,7 @@ impact of key pipeline components through ablation studies.
 
 
 ## Qualitative results
-Here are some GIFs showing our qualitative results on 3D occupancy prediction. Foreground voxels are colored as <span style="color: red;">red</span> while background voxels
+Here are some GIFs showing our qualitative results on 3D occupancy prediction. Foreground voxels are colored as <span style="color:red;">red</span> while background voxels
 <span style="color: green;">are green</span>.
  Some of these results can also be found in our supplementary [demo video](https://youtu.be/sa4gejcWMvk).
 
@@ -79,7 +79,7 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
   <img src="assets/radarocc_gif_demo_dusk.gif" width="49%" style="display: inline-block;"/>
 </p>
 
-#### Adverse weathers
+#### Adverse weathers (in comparison with LiDAR and RGB camera)
 ![GIF 1](assets/radarocc_gif_demo_modality_cut.gif)
 ![GIF 1](assets/radarocc_gif_demo_modality_2_cut.gif)
 
