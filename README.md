@@ -22,8 +22,9 @@ For technical details, please refer to our paper on NeurIPS 2024:
 - [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
 - [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
 - [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
-- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://youtu.be/sa4gejcWMvk).
-- [TODO] illustration for dataset preparation and weight.
+- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://youtu.be/sa4gejcWMvk). Demos in the format of GIF are also provided 🔗[below](#qualitative-results).
+- [2024-11-12] Our paper 👉[slides](https://nips.cc/media/neurips-2024/Slides/96791.pdf) and [recording](https://recorder-v3.slideslive.com/?share=95505&s=cfe10684-4448-4e15-8277-a7e18080730f) have been uploaded to offical website.
+- [TODO] Provide the illustration for dataset preparation and weight.
 
 ## Citation
 If you find our work helpful to your research, please consider citing:
