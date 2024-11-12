@@ -63,7 +63,28 @@ impact of key pipeline components through ablation studies.
 | ***Figure 1. Overall pipeline of RadarOcc**. The data volume reduction pre-processes the 4DRT into a lightweight sparse RT via Doppler bins encoding and sidelobe-aware spatial sparifying. We apply spherical-based feature encoding on the sparse RT and aggregate the spherical features using Cartesian voxel queries. The 3D occupancy volume is finally output via 3D occupancy decoding.* |
 
 
-# Getting Started
+## Qualitative results
+Here are some GIFs showing our qualitative results on 3D occupancy prediction. Foreground voxels are colored as <span style="color: red;">red</span> while background voxels
+<span style="color: green;">are green</span>.
+ Some of these results can also be found in our supplementary [demo video](https://youtu.be/sa4gejcWMvk).
+
+#### Normal weathers
+
+<p align="center">
+  <img src="assets/radarocc_gif_demo_daylight.gif" width="49%" style="display: inline-block;"/>
+  <img src="assets/radarocc_gif_demo_night.gif" width="49%" style="display: inline-block;"/>
+</p>
+<p align="center">
+  <img src="assets/radarocc_gif_demo_night2.gif" width="49%" style="display: inline-block;"/>
+  <img src="assets/radarocc_gif_demo_dusk.gif" width="49%" style="display: inline-block;"/>
+</p>
+
+#### Adverse weathers
+![GIF 1](assets/radarocc_gif_demo_modality_cut.gif)
+![GIF 1](assets/radarocc_gif_demo_modality_2_cut.gif)
+
+
+## Getting Started
 Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md) 
@@ -71,13 +92,9 @@ Please follow installation instructions from OpenOccupancy
 - [Prepare Dataset](docs/prepare_data.md)
 
 - [Training, Evaluation, Visualization](docs/trainval.md)
+- 
 
-## Qualitative results
-Here are some GIFs showing our qualitative results on 3D occupancy prediction. Some of these results can also be found in our supplementary [demo video](https://youtu.be/sa4gejcWMvk).
-
-
-
-# Acknowledgement
+## Acknowledgement
 
 Many thanks to these excellent projects:
 - [SurroundOcc](https://github.com/weiyithu/SurroundOcc)
