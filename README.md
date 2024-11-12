@@ -22,7 +22,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 - [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
 - [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
 - [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
-- [2024-11-11] Our supplementary demo video is available online. See it via 👉[Youtube](https://youtu.be/sa4gejcWMvk).
+- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://youtu.be/sa4gejcWMvk).
 - [TODO] illustration for dataset preparation and weight.
 
 ## Citation
