@@ -1,7 +1,7 @@
 # RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar
 
 [![Static Badge](https://img.shields.io/badge/arXiv-PDF-green?style=flat&logo=arXiv&logoColor=green)](https://arxiv.org/abs/2306.17010) 
-[![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=fa91EeueGHA)
+[![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=sa4gejcWMvk)
 [![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 ![Robust 3D Occupancy Prediction with 4D Imaging Radar](assets/qual_vis.png)
@@ -14,7 +14,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 <br/>
 [Fangqiang Ding](https://toytiny.github.io/), [Xiangyu Wen](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu](https://lawrencez22.github.io/), [Yiming Li](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
 <br/>
-[[arXiv]](https://arxiv.org/abs/2405.14014) [[demo]](https://youtu.be/sa4gejcWMvk)
+[[arXiv]](https://arxiv.org/abs/2405.14014) [[demo]](https://youtu.be/sa4gejcWMvk) [[slide]](https://nips.cc/media/neurips-2024/Slides/96791.pdf)
 
 
 
@@ -22,7 +22,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 - [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
 - [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
 - [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
-- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://youtu.be/sa4gejcWMvk). Demos in the format of GIF are also provided 🔗[below](#qualitative-results).
+- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://www.youtube.com/watch?v=sa4gejcWMvk). GIF demos are also provided 🔗[below](#qualitative-results).
 - [2024-11-12] Our paper 👉[slides](https://nips.cc/media/neurips-2024/Slides/96791.pdf) and [recording](https://recorder-v3.slideslive.com/?share=95505&s=cfe10684-4448-4e15-8277-a7e18080730f) have been uploaded to offical website.
 - [TODO] Provide the illustration for dataset preparation and weight.
 
@@ -81,8 +81,9 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 </p>
 
 #### Adverse weathers (in comparison with LiDAR and RGB camera)
-![GIF 1](assets/radarocc_gif_demo_modality_cut.gif)
-![GIF 1](assets/radarocc_gif_demo_modality_2_cut.gif)
+<img src="assets/radarocc_gif_demo_modality_cut.gif" width="80%" alt="Radar Occupancy Demo GIF">
+
+<img src="assets/radarocc_gif_demo_modality_cut.gif" width="80%" alt="Radar Occupancy Demo GIF">
 
 
 ## Getting Started
