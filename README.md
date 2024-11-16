@@ -29,7 +29,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 <br/>
 <sup>1</sup>University of Edinburgh, <sup>2</sup>Georgia Institute of Technology, <sup>3</sup>NYU, <sup>4</sup>UCL
 <br/>
-*Equal contribution, †Correponding author
+*Equal contribution, †Corresponding author
 
 <p align="left">
 <img src='./assets/sparsifying_example.png' width="700">
