@@ -25,9 +25,9 @@ For technical details, please refer to our paper on NeurIPS 2024:
 <br/>
 [Fangqiang Ding<sup>1,*</sup>](https://toytiny.github.io/), [Xiangyu Wen<sup>1,*</sup>](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu<sup>2</sup>](https://lawrencez22.github.io/), [Yiming Li<sup>3</sup>](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu<sup>4,†</sup>](https://christopherlu.github.io/)
 <br/>
-<sup>1</sup>University of Edinburgh, <sup>2</sup>Georgia Institute of Technology, <sup>3</sup>NYU, <sup>4</sup>UCL
-<br/>
 [[arXiv]](https://arxiv.org/abs/2405.14014) [[page]](https://toytiny.github.io/publication/24-radarocc-neurips/) [[demo]](https://youtu.be/sa4gejcWMvk) [[slide]](https://nips.cc/media/neurips-2024/Slides/96791.pdf)
+<br/>
+<sup>1</sup>University of Edinburgh, <sup>2</sup>Georgia Institute of Technology, <sup>3</sup>NYU, <sup>4</sup>UCL
 <br/>
 *Equal contribution, †Correponding author
 
