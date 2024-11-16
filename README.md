@@ -4,15 +4,17 @@
 # RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar
 </div>
 
+<div align="center">   
+
 [![Static Badge](https://img.shields.io/badge/arXiv-PDF-green?style=flat&logo=arXiv&logoColor=green)](https://arxiv.org/abs/2405.14014) 
 [![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=sa4gejcWMvk)
-[![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE) [![Project Page](https://img.shields.io/badge/Project%20Page-RadarOcc-yellow)](https://toytiny.github.io/publication/24-radarocc-neurips/)
 
 
+</div>
 <p align="left">
 <img src='assets/radarocc_gif_demo_snow.gif' width="700">
 </p>
-
 
 
 This is the official repository of the **RadarOcc**, a pioneering appraoch for 3D occupancy prediction based on 4D imaging radar. 
@@ -20,10 +22,14 @@ For technical details, please refer to our paper on NeurIPS 2024:
 
 **RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar**
 <br/>
-[Fangqiang Ding<sup>1</sup>](https://toytiny.github.io/), [Xiangyu Wen<sup>1</sup>](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu<sup>2</sup>](https://lawrencez22.github.io/), [Yiming Li<sup>3</sup>](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu<sup>4</sup>](https://christopherlu.github.io/)
+[Fangqiang Ding<sup>1,*</sup>](https://toytiny.github.io/), [Xiangyu Wen<sup>1,*</sup>](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu<sup>2</sup>](https://lawrencez22.github.io/), [Yiming Li<sup>3</sup>](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu<sup>4,†</sup>](https://christopherlu.github.io/)
 <br/>
-[<sup>1</sup>University of Edinburgh](https://www.ed.ac.uk/),
-[<sup>2</sup>Georgia Institute of Technology](https://www.gatech.edu/), [<sup>3</sup>NYU](https://www.nyu.edu/),  [<sup>4</sup>AI Centre, Department of Computer Science, UCL](https://www.ucl.ac.uk/ai-centre/), 
+*Equal contribution, †Correponding author
+<br/>
+<sup>1</sup>University of Edinburgh, <sup>2</sup>Georgia Institute of Technology, <sup>3</sup>New York University, <sup>4</sup>University College London 
+<br/>
+[[arXiv]](https://arxiv.org/abs/2405.14014) [[page]](https://toytiny.github.io/publication/24-radarocc-neurips/) [[demo]](https://youtu.be/sa4gejcWMvk) [[slide]](https://nips.cc/media/neurips-2024/Slides/96791.pdf)
+
 
 <p align="left">
 <img src='./assets/sparsifying_example.png' width="700">
