@@ -1,6 +1,6 @@
 # RadarOcc: Robust 3D Occupancy Prediction with 4D Imaging Radar
 
-[![Static Badge](https://img.shields.io/badge/arXiv-PDF-green?style=flat&logo=arXiv&logoColor=green)](https://arxiv.org/abs/2306.17010) 
+[![Static Badge](https://img.shields.io/badge/arXiv-PDF-green?style=flat&logo=arXiv&logoColor=green)](https://arxiv.org/abs/2405.14014) 
 [![YouTube Badge](https://img.shields.io/badge/YouTube-Watch-red?style=flat-square&logo=youtube)](https://www.youtube.com/watch?v=sa4gejcWMvk)
 [![License: MIT](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
