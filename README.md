@@ -14,7 +14,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 <br/>
 [Fangqiang Ding](https://toytiny.github.io/), [Xiangyu Wen](https://scholar.google.com/citations?user=WxgdNyAAAAAJ&hl=en&oi=ao), [Yunzhou Zhu](https://lawrencez22.github.io/), [Yiming Li](https://yimingli-page.github.io/), [Chris Xiaoxuan Lu](https://christopherlu.github.io/)
 <br/>
-[[arXiv]](https://arxiv.org/abs/2405.14014) [[demo]](https://youtu.be/sa4gejcWMvk) [[slide]](https://nips.cc/media/neurips-2024/Slides/96791.pdf)
+[[arXiv]](https://arxiv.org/abs/2405.14014) [[page]](https://toytiny.github.io/publication/24-radarocc-neurips/) [[demo]](https://youtu.be/sa4gejcWMvk) [[slide]](https://nips.cc/media/neurips-2024/Slides/96791.pdf)
 
 
 
@@ -22,8 +22,10 @@ For technical details, please refer to our paper on NeurIPS 2024:
 - [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
 - [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
 - [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
-- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://www.youtube.com/watch?v=sa4gejcWMvk). GIF demos are also provided 🔗[below](#qualitative-results).
+- [2024-11-11] Our supplementary demo video is available online. Watch it via 👉[Youtube](https://www.youtube.com/watch?v=sa4gejcWMvk). 
+- [2024-11-11] GIF demos are also provided 🔗[below](#qualitative-results).
 - [2024-11-12] Our paper 👉[slides](https://nips.cc/media/neurips-2024/Slides/96791.pdf) and [recording](https://recorder-v3.slideslive.com/?share=95505&s=cfe10684-4448-4e15-8277-a7e18080730f) have been uploaded to offical website.
+- [2024-11-16] Our project page is published. Please have a look👉[page](https://toytiny.github.io/publication/24-radarocc-neurips/).
 - [TODO] Provide the illustration for dataset preparation and weight.
 
 ## Citation
