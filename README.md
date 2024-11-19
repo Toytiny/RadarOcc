@@ -126,3 +126,4 @@ Please follow installation instructions from OpenOccupancy
 Many thanks to these excellent projects:
 - [SurroundOcc](https://github.com/weiyithu/SurroundOcc)
 - [OpenOccupancy](https://github.com/JeffWang987/OpenOccupancy)
+- [VoxFormer](https://github.com/NVlabs/VoxFormer)
