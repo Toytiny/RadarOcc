@@ -232,7 +232,7 @@ if __name__ == '__main__':
     parse = ArgumentParser()
 
     parse.add_argument('--data_path', type=str, default = '/mnt/data/DataSet/K-RadarOOC/')
-    parse.add_argument('--config_path', type=str, default='/home/xiangyu/SurroundOcc/tools/generate_occupancy_with_own_data/config.yaml')
+    parse.add_argument('--config_path', type=str, default='./config.yaml')
     parse.add_argument('--len_sequence', type=int, default = 100)    
     parse.add_argument('--to_mesh', action='store_true', default=False)
     parse.add_argument('--with_semantic', action='store_true', default=True)
