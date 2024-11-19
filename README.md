@@ -35,7 +35,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 <img src='./assets/sparsifying_example.png' width="700">
 </p>
 
-## News
+## 🔥 News
 - [2024-05-22] Our preprint paper is available on 👉[arXiv](https://arxiv.org/abs/2405.14014).
 - [2024-09-26] Our paper is accepted by [NeurIPS 2024](https://neurips.cc/) 🎉.
 - [2024-11-04] Our network and training code is uploaded. Stay tuned for update👀!
@@ -44,7 +44,7 @@ For technical details, please refer to our paper on NeurIPS 2024:
 - [2024-11-16] Our project page is published. Please have a look👉[page](https://toytiny.github.io/publication/24-radarocc-neurips/).
 - [TODO] Provide the illustration for dataset preparation and weight.
 
-## Citation
+## 🔗 Citation
 If you find our work helpful to your research, please consider citing:
 
 
@@ -56,7 +56,7 @@ If you find our work helpful to your research, please consider citing:
   year={2024}
 }
 ```
-## Abstract 
+## 📝 Abstract 
 
 3D occupancy-based perception pipeline has significantly advanced autonomous
 driving by capturing detailed scene descriptions and demonstrating strong generalizability across various object categories and shapes. Current methods predominantly
@@ -76,13 +76,13 @@ occupancy prediction and promising results even when compared with LiDARor camer
 superior performance of 4D radar in adverse weather conditions and explore the
 impact of key pipeline components through ablation studies.
 
-## Method
+## 📦 Method
 | ![pipeline.jpg](assets/pipeline_fig_2.png) | 
 |:--:| 
 | <div align="left">***Figure 1. Overall pipeline of RadarOcc**. The data volume reduction pre-processes the 4DRT into a lightweight sparse RT via Doppler bins encoding and sidelobe-aware spatial sparifying. We apply spherical-based feature encoding on the sparse RT and aggregate the spherical features using Cartesian voxel queries. The 3D occupancy volume is finally output via 3D occupancy decoding.*</div> |
 
 
-## Qualitative results
+## 🏞️ Qualitative results
 Here are some GIFs showing our qualitative results on 3D occupancy prediction. Foreground voxels are colored as <span style="color:red;">red</span> while background voxels
 <span style="color: green;">are green</span>.
  Some of these results can also be found in our supplementary [demo video](https://youtu.be/sa4gejcWMvk).
@@ -104,7 +104,7 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 <img src="assets/radarocc_gif_demo_modality_cut.gif" width="80%" alt="Radar Occupancy Demo GIF">
 
 
-## Getting Started
+## 🚀 Getting Started
 Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md) 
