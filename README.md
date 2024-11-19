@@ -107,7 +107,7 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 ## 🚀 Getting Started
 ### Dataset preprocessing
 1. Download the [Kradar Dataset](https://github.com/kaist-avelab/K-Radar).
-2. Occ GT generation. RadarOcc follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
+2. Occ GT generation. **RadarOcc** follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
 To use our config for the occ generation, please clone this repo, modify the root path at [here](https://github.com/Toytiny/RadarOcc/blob/f2ab7c2d31c654070cdc96c97995bb2a378cba90/tools/process_kradar.py#L259) and
 ```
 cd tools
@@ -128,16 +128,16 @@ Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md)
 
-Additionly, RadarOcc use 3d deformable attn as VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
+Additionally, **RadarOcc** uses 3d deformable attn ops from VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
 
-For training, evaluation and viuslization, please refer to OpenOccupancy
+For training, evaluation and visualization, please refer to OpenOccupancy
 - [Training, Evaluation, Visualization](docs/trainval.md)
 
-For example, RadarOcc can be trained use at least two 24G GPUs
+For example, **RadarOcc** can be trained with at least two 24G GPUs
 ```
 bash run.sh ./projects/baselines/RadarOcc_self.py 2
 ```
-the smaller and faster version RadarOcc-S
+the smaller and faster version **RadarOcc-S**
 ```
 bash run.sh ./projects/baselines/RadarOcc_Small.py 2
 ```
