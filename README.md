@@ -117,6 +117,8 @@ Please follow installation instructions from OpenOccupancy
 - [Installation](docs/install.md) 
 
 - [Training, Evaluation, Visualization](docs/trainval.md)
+
+- Build 3d deformable attn dependence from [VoxFormer](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
   
 
 ## Acknowledgement
