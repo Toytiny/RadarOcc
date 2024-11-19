@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def process_file(clip, file, input_dir, output_dir):
     file_path = os.path.join(input_dir, file)
-    data = np.load(file_path)
+    data = np.load(file_path) # We have already convert .mat to .npy
     # data = data.astype(np.float16)
     d_dim, r_dim, a_dim, e_dim = data.shape
      
@@ -33,7 +33,7 @@ def process_file(clip, file, input_dir, output_dir):
     azimuth_inds_flat = azimuth_inds.flatten()
     power_val = data[:,range_inds_flat, elevation_inds_flat, azimuth_inds_flat]
     
-    top_indices = np.argpartition(power_val, -5, axis=0)[-5:]
+    top_indices = np.argpartition(power_val, -3, axis=0)[-3:]
     N_dim = power_val.shape[1]
     top_values = power_val[top_indices, np.arange(N_dim)]
 
@@ -45,14 +45,14 @@ def process_file(clip, file, input_dir, output_dir):
     new_data = np.vstack((top_values, top_indices, means, variances))
 
     # Transpose and reshape to get desired format: 8 x N_dim
-    new_data = np.vstack((new_data[:5], new_data[5:10], new_data[10], new_data[11])).reshape(12, N_dim)
+    new_data = np.vstack((new_data[:3], new_data[3:6], new_data[6], new_data[7])).reshape(8, N_dim)
 
     output_file_path = os.path.join(output_dir, f"EAsparse_{idx}.npz")
     np.savez(output_file_path, range_ind=range_inds_flat, elevation_ind=elevation_inds_flat, azimuth_ind=azimuth_inds_flat, power_val=new_data)
     return f"{clip} {file} processed successfully"
 import gc
 def process_clip(clip):
-    output_dir = os.path.join(output_base_dir, clip, "radar_tensor_12doppler")
+    output_dir = os.path.join(output_base_dir, clip, "radar_tensor_8doppler")
     input_dir = os.path.join(input_base_dir, clip, "radar_polar_cube")
     os.makedirs(output_dir, exist_ok=True)
     file_names = sorted(os.listdir(input_dir))
@@ -80,5 +80,4 @@ clips = [clip for clip in clips[0] if clip.isdigit()]
 clips = sorted(clips, key=lambda x: int(x))
 
 for clip in clips:
-    if int(clip) >= 19:
         process_clip(clip)
