@@ -105,22 +105,41 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 
 
 ## 🚀 Getting Started
-## Dataset preprocessing
-1. For Occ GT generation, please follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) using the os-2 64 lidar in the Kradar dataset
+### Dataset preprocessing
+1. Download the Kradar Dataset.
+2. Occ GT generation. radarocc follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
+To use our config for the occ generation, please clone this repo, modify the root path at [here](https://github.com/Toytiny/RadarOcc/blob/f2ab7c2d31c654070cdc96c97995bb2a378cba90/tools/process_kradar.py#L259) and
+```
+cd tools
+python process_kradar.py
+python filter_kradar_fov.py
+```
 
-2. The [generate_4d_polar_percentil.py](generate_4d_polar_percentil.py) preprocess the raw radar data using Sidelobe-aware spatial sparsifying
+3. The [generate_4d_polar_percentil.py](generate_4d_polar_percentil.py) preprocess the raw radar data using Sidelobe-aware spatial sparsifying
+```
+cd ..
+python generate_4d_polar_percentil.py
+```
 
-3. Please define your train/test/val set by generating .pkl files for the mmdet3d framework following our code in [convert_kradar.ipynb](convert_kradar.ipynb)
+4. Please define your train/test/val set by generating .pkl files for the mmdet3d framework, we provide a jupyter notebook [convert_kradar.ipynb](convert_kradar.ipynb) for this.
 
-## Getting Started
+### Getting Started
 Please follow installation instructions from OpenOccupancy
 
-- [Installation](docs/install.md) 
+- [Installation](docs/install.md)
 
+Additionly, Radarocc use 3d deformable attn as VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
+
+For training, evaluation and viuslization, please refer to OpenOccupancy
 - [Training, Evaluation, Visualization](docs/trainval.md)
-
-- Build 3d deformable attn dependence from [VoxFormer](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
-  
+For example, radarocc can be trained use at least two 24G GPUs
+```
+bash run.sh ./projects/baselines/RadarOcc_self.py 2
+```
+the smaller and faster version radarocc-S
+```
+bash run.sh ./projects/baselines/RadarOcc_Small.py 2
+```
 
 ## Acknowledgement
 
