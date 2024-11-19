@@ -106,8 +106,8 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 
 ## 🚀 Getting Started
 ### Dataset preprocessing
-1. Download the Kradar Dataset.
-2. Occ GT generation. radarocc follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
+1. Download the [Kradar Dataset](https://github.com/kaist-avelab/K-Radar).
+2. Occ GT generation. RadarOcc follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
 To use our config for the occ generation, please clone this repo, modify the root path at [here](https://github.com/Toytiny/RadarOcc/blob/f2ab7c2d31c654070cdc96c97995bb2a378cba90/tools/process_kradar.py#L259) and
 ```
 cd tools
@@ -121,22 +121,23 @@ cd ..
 python generate_4d_polar_percentil.py
 ```
 
-4. Please define your train/test/val set by generating .pkl files for the mmdet3d framework, we provide a jupyter notebook [convert_kradar.ipynb](convert_kradar.ipynb) for this.
+4. Define your train/test/val set by generating .pkl files for the mmdet3d framework, we provide a jupyter notebook [convert_kradar.ipynb](convert_kradar.ipynb) for this.
 
 ### Getting Started
 Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md)
 
-Additionly, Radarocc use 3d deformable attn as VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
+Additionly, RadarOcc use 3d deformable attn as VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
 
 For training, evaluation and viuslization, please refer to OpenOccupancy
 - [Training, Evaluation, Visualization](docs/trainval.md)
-For example, radarocc can be trained use at least two 24G GPUs
+
+For example, RadarOcc can be trained use at least two 24G GPUs
 ```
 bash run.sh ./projects/baselines/RadarOcc_self.py 2
 ```
-the smaller and faster version radarocc-S
+the smaller and faster version RadarOcc-S
 ```
 bash run.sh ./projects/baselines/RadarOcc_Small.py 2
 ```
