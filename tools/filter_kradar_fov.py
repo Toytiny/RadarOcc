@@ -11,7 +11,7 @@ from tqdm import tqdm
 def main():
 
     root_path = "/mnt/data/DataSet/K-RadarOOC/"
-    config_path = '/home/xiangyu/SurroundOcc/tools/generate_occupancy_with_own_data/config.yaml'
+    config_path = './config.yaml'
 
     parse = ArgumentParser()
     args=parse.parse_args()
