@@ -106,7 +106,7 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 
 ## 🚀 Getting Started
 ### Dataset preprocessing
-1. Download the [Kradar Dataset](https://github.com/kaist-avelab/K-Radar).
+1. Download the [K-Radar Dataset](https://github.com/kaist-avelab/K-Radar).
 2. Occ GT generation. **RadarOcc** follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
 To use our config for the occ generation, please clone this repo, modify the root path at [here](https://github.com/Toytiny/RadarOcc/blob/f2ab7c2d31c654070cdc96c97995bb2a378cba90/tools/process_kradar.py#L259) and
 ```
