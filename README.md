@@ -104,15 +104,20 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 <img src="assets/radarocc_gif_demo_modality_cut.gif" width="80%" alt="Radar Occupancy Demo GIF">
 
 
+## Dataset preprocessing
+1. For Occ GT generation, please follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) using the os-2 64 lidar in the Kradar dataset
+
+2. The generate_4d_polar_percentil.py preprocess the raw radar data using Sidelobe-aware spatial sparsifying
+
+3. Please define your train/test/val set by generating .pkl files for the mmdet3d framework following our code in convert_kradar.ipynb
+
 ## Getting Started
 Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md) 
 
-- [Prepare Dataset](docs/prepare_data.md)
-
 - [Training, Evaluation, Visualization](docs/trainval.md)
-- 
+  
 
 ## Acknowledgement
 
