@@ -489,7 +489,7 @@ class RadarEncV8small(nn.Module):
     def __init__(self, input_channel, norm_cfg, base_channel, out_channel, 
                 sparse_shape_xyz, top_k=250,**kwargs):
         super().__init__()
-        self.record_time = True
+        self.record_time = False
         block = post_act_block
         self.sparse_shape_xyz = sparse_shape_xyz
 
