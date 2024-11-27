@@ -1,3 +1,4 @@
+import copy
 import numpy as np
 import torch
 import torch.nn as nn
@@ -9,6 +10,7 @@ from .lovasz_softmax import lovasz_softmax
 from projects.occ_plugin.utils import coarse_to_fine_coordinates, project_points_on_img
 from projects.occ_plugin.utils.nusc_param import nusc_class_frequencies, nusc_class_names, kradar_easy_class_frequencies
 from projects.occ_plugin.utils.semkitti import geo_scal_loss, sem_scal_loss, CE_ssc_loss
+import contextlib
 @HEADS.register_module()
 class OccHead(nn.Module):
     def __init__(
@@ -45,7 +47,7 @@ class OccHead(nn.Module):
         self.out_channel = out_channel
         self.num_level = num_level
         self.fine_topk = fine_topk
-        self.fp16 = False
+        self.fp16 = fp16
         
         self.point_cloud_range = torch.tensor(np.array(point_cloud_range)).float()
         self.final_occ_size = final_occ_size
@@ -161,8 +163,78 @@ class OccHead(nn.Module):
         return output
      
     def forward(self, voxel_feats, img_feats=None, pts_feats=None, transform=None, **kwargs):
-            assert type(voxel_feats) is list and len(voxel_feats) == self.num_level
+        assert type(voxel_feats) is list and len(voxel_feats) == self.num_level
+        if self.fp16:
+          amp_ctx = torch.cuda.amp.autocast()
+          with amp_ctx:
+            output = self.forward_coarse_voxel(voxel_feats)
 
+            out_voxel_feats = output['out_voxel_feats'][0]
+            coarse_occ = output['occ'][0]
+
+            if self.cascade_ratio != 1:
+                if self.sample_from_img or self.sample_from_voxel:
+                    coarse_occ_mask = coarse_occ.argmax(1) != self.empty_idx
+                    assert coarse_occ_mask.sum() > 0, 'no foreground in coarse voxel'
+                    B, W, H, D = coarse_occ_mask.shape
+                    coarse_coord_x, coarse_coord_y, coarse_coord_z = torch.meshgrid(torch.arange(W).to(coarse_occ.device),
+                                torch.arange(H).to(coarse_occ.device), torch.arange(D).to(coarse_occ.device), indexing='ij')
+                    
+                    output['fine_output'] = []
+                    output['fine_coord'] = []
+
+                    if self.sample_from_img and img_feats is not None:
+                        img_feats_ = img_feats[0]
+                        B_i,N_i,C_i, W_i, H_i = img_feats_.shape
+                        img_feats_ = img_feats_.reshape(-1, C_i, W_i, H_i)
+                        img_feats = [self.img_mlp_0(img_feats_).reshape(B_i, N_i, -1, W_i, H_i)]
+
+                    for b in range(B):
+                        append_feats = []
+                        this_coarse_coord = torch.stack([coarse_coord_x[coarse_occ_mask[b]],
+                                                        coarse_coord_y[coarse_occ_mask[b]],
+                                                        coarse_coord_z[coarse_occ_mask[b]]], dim=0)  # 3, N
+                        if self.training:
+                            this_fine_coord = coarse_to_fine_coordinates(this_coarse_coord, self.cascade_ratio, topk=self.fine_topk)  # 3, 8N/64N
+                        else:
+                            this_fine_coord = coarse_to_fine_coordinates(this_coarse_coord, self.cascade_ratio)  # 3, 8N/64N
+
+                        output['fine_coord'].append(this_fine_coord)
+                        new_coord = this_fine_coord[None].permute(0,2,1).float().contiguous()  # x y z
+
+                        if self.sample_from_voxel:
+                            this_fine_coord = this_fine_coord.float()
+                            this_fine_coord[0, :] = (this_fine_coord[0, :]/(self.final_occ_size[0]-1) - 0.5) * 2
+                            this_fine_coord[1, :] = (this_fine_coord[1, :]/(self.final_occ_size[1]-1) - 0.5) * 2
+                            this_fine_coord[2, :] = (this_fine_coord[2, :]/(self.final_occ_size[2]-1) - 0.5) * 2
+                            this_fine_coord = this_fine_coord[None,None,None].permute(0,4,1,2,3).float()
+                            # 5D grid_sample input: [B, C, H, W, D]; cor: [B, N, 1, 1, 3]; output: [B, C, N, 1, 1]
+                            new_feat = F.grid_sample(out_voxel_feats[b:b+1].permute(0,1,4,3,2), this_fine_coord, mode='bilinear', padding_mode='zeros', align_corners=False)
+                            append_feats.append(new_feat[0,:,:,0,0].permute(1,0))
+                            assert torch.isnan(new_feat).sum().item() == 0
+                            
+                        # image branch
+                        if img_feats is not None and self.sample_from_img:
+                            W_new, H_new, D_new = W * self.cascade_ratio, H * self.cascade_ratio, D * self.cascade_ratio
+                            img_uv, img_mask = project_points_on_img(new_coord, rots=transform[0][b:b+1], trans=transform[1][b:b+1],
+                                        intrins=transform[2][b:b+1], post_rots=transform[3][b:b+1],
+                                        post_trans=transform[4][b:b+1], bda_mat=transform[5][b:b+1],
+                                        W_img=transform[6][1][b:b+1], H_img=transform[6][0][b:b+1],
+                                        pts_range=self.point_cloud_range, W_occ=W_new, H_occ=H_new, D_occ=D_new)  # 1 N n_cam 2
+                            for img_feat in img_feats:
+                                sampled_img_feat = F.grid_sample(img_feat[b].contiguous(), img_uv.contiguous(), align_corners=True, mode='bilinear', padding_mode='zeros')
+                                sampled_img_feat = sampled_img_feat * img_mask.permute(2,1,0)[:,None]
+                                sampled_img_feat = self.img_mlp(sampled_img_feat.sum(0)[:,:,0].permute(1,0))
+                                append_feats.append(sampled_img_feat)  # N C
+                                assert torch.isnan(sampled_img_feat).sum().item() == 0
+                        output['fine_output'].append(self.fine_mlp(torch.concat(append_feats, dim=1)))
+
+            res = {
+                'output_voxels': output['occ'],
+                'output_voxels_fine': output.get('fine_output', None),
+                'output_coords_fine': output.get('fine_coord', None),
+            }
+        else:
             output = self.forward_coarse_voxel(voxel_feats)
 
             out_voxel_feats = output['out_voxel_feats'][0]
@@ -231,7 +303,7 @@ class OccHead(nn.Module):
                 'output_coords_fine': output.get('fine_coord', None),
             }
             
-            return res
+        return res
 
     def loss_voxel(self, output_voxels, target_voxels,tag,sigmoid_cube=None):
         loss_dict = {}
@@ -301,4 +373,3 @@ class OccHead(nn.Module):
             
         return loss_dict
     
-        
