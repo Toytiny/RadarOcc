@@ -140,9 +140,10 @@ the smaller and faster version **RadarOcc-S**
 ```
 bash run.sh ./projects/baselines/RadarOcc_Small.py 2
 ```
-To Test the **RadarOcc-S** with pre-trained weight [best_SSC_mean_epoch_6.pth](https://drive.google.com/file/d/1YIljvGG54fSxeAQ9X5WlLz4-x7zCYeH8/view?usp=sharing):
+To Evaluate the **RadarOcc-S** with pre-trained weight [best_SSC_mean_epoch_6.pth](https://drive.google.com/file/d/1YIljvGG54fSxeAQ9X5WlLz4-x7zCYeH8/view?usp=sharing):
+```
 bash run.sh ./projects/baselines/RadarOcc_Small.py 2 path_to_weight
-
+```
 ## Acknowledgement
 
 Many thanks to these excellent projects:
