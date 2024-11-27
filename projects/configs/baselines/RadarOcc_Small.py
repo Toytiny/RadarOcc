@@ -100,7 +100,8 @@ model = dict(
         ),
          balance_cls_weight=True,
          class_num = num_cls,
-         class_names = class_names        
+         class_names = class_names,
+         fp16 = True
     ),
              ###################Attention configs#######################
     cross_transformer=dict(
