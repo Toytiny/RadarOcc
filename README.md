@@ -105,44 +105,52 @@ Here are some GIFs showing our qualitative results on 3D occupancy prediction. F
 
 ## 🚀 Getting Started
 ### Dataset preprocessing
-1. Download the [K-Radar Dataset](https://github.com/kaist-avelab/K-Radar).
-2. Occ GT generation. **RadarOcc** follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy gt using the os-2 64 lidar in the Kradar dataset.
-To use our config for the occ generation, please clone this repo, modify the root path at [here](https://github.com/Toytiny/RadarOcc/blob/f2ab7c2d31c654070cdc96c97995bb2a378cba90/tools/process_kradar.py#L259) and
+Please follow the steps below to prepare and preprocess the dataset we used.
+
+a. Obtain the [K-Radar Dataset](https://github.com/kaist-avelab/K-Radar). 
+   
+> **Note**:  
+> To completely reproduce our results, please ensure you get access to the total dataset from the host.
+
+b. Occupancy GT generation. **RadarOcc** follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy GT using the os-2 64 lidar in the K-Radar dataset.
+To use our config for the occupancy GT generation, please clone this repo, modify the root path at [here](https://github.com/Toytiny/RadarOcc/blob/f2ab7c2d31c654070cdc96c97995bb2a378cba90/tools/process_kradar.py#L259) and run the following codes:
 ```
 cd tools
 python process_kradar.py
 python filter_kradar_fov.py
 ```
 
-3. The [generate_4d_polar_percentil.py](generate_4d_polar_percentil.py) preprocess the raw radar data using Sidelobe-aware spatial sparsifying
+c. Sparsification of radar raw data. For efficiency, we preprocess the radar raw data into the sparse format before feeding them into neural networks. The [generate_4d_polar_percentil.py](generate_4d_polar_percentil.py) preprocess the raw radar data using sidelobe-aware spatial sparsifying. Please run it with:
 ```
 cd ..
 python generate_4d_polar_percentil.py
 ```
 
-4. Define your train/test/val set by generating .pkl files for the mmdet3d framework, we provide a jupyter notebook [convert_kradar.ipynb](convert_kradar.ipynb) for this.
+d. Define your train/test/val set by generating .pkl files for the [mmdet3d](https://github.com/open-mmlab/mmdetection3d) framework, we provide a jupyter notebook [convert_kradar.ipynb](convert_kradar.ipynb) for this. Please run the code blocks in it. 
 
-### Getting Started
-Please follow installation instructions from OpenOccupancy
+### Installation
+a. Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md)
 
-Additionally, **RadarOcc** uses 3d deformable attn ops from VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
+b. Additionally, **RadarOcc** uses 3d deformable attn ops from VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
 
-For training, evaluation and visualization, please refer to OpenOccupancy
+### Running 
+
+For training, evaluation and visualization, please refer to the doc provided by OpenOccupancy
 - [Training, Evaluation, Visualization](docs/trainval.md)
 
-For example, **RadarOcc** can be trained with at least two 24G GPUs
+For example, **RadarOcc** can be trained with at least two 24G GPUs by running:
 ```
 bash run.sh ./projects/baselines/RadarOcc_self.py 2
 ```
-the smaller and faster version **RadarOcc-S**
+To train the smaller and faster version **RadarOcc-S**, please run:
 ```
 bash run.sh ./projects/baselines/RadarOcc_Small.py 2
 ```
-To Evaluate the **RadarOcc-S** with pre-trained weight [best_SSC_mean_epoch_6.pth](https://drive.google.com/file/d/1YIljvGG54fSxeAQ9X5WlLz4-x7zCYeH8/view?usp=sharing):
+To evaluate the **RadarOcc-S** with our pre-trained weight [best_SSC_mean_epoch_6.pth](https://drive.google.com/file/d/1YIljvGG54fSxeAQ9X5WlLz4-x7zCYeH8/view?usp=sharing), please run:
 ```
-bash run.sh ./projects/baselines/RadarOcc_Small.py 2 path_to_weight
+bash run.sh ./projects/baselines/RadarOcc_Small.py 2 $PATH_TO_WEIGHT$
 ```
 ## Acknowledgement
 
