@@ -133,7 +133,7 @@ a. Please follow installation instructions from OpenOccupancy
 
 - [Installation](docs/install.md)
 
-b. Additionally, **RadarOcc** uses 3d deformable attn ops from VoxFormer, please install it in  [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
+b. Additionally, **RadarOcc** uses 3d deformable attn ops from VoxFormer, please install it via [VoxFormer/deform_attn_3d](https://github.com/NVlabs/VoxFormer/tree/main/deform_attn_3d)
 
 ### Running 
 
