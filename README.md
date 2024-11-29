@@ -111,7 +111,7 @@ a. Obtain the [K-Radar Dataset](https://github.com/kaist-avelab/K-Radar).
    
 > **Note**:  
 > To completely reproduce our results, please ensure you  at least get access to the following sequences from the host:
-> {4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 27, 56 , 3, 15, 22, 23, 55, 1, 2, 21, 46,54}
+> {4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 27, 56, 3, 15, 22, 23, 55, 1, 2, 21, 46, 54}
 
 
 b. Occupancy GT generation. **RadarOcc** follow [SurroundOcc](https://github.com/weiyithu/SurroundOcc) to generate occupancy GT using the os-2 64 lidar in the K-Radar dataset.
