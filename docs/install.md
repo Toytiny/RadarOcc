@@ -1,4 +1,4 @@
-# Step-by-step installation instructions
+# Step-by-step installation instructions from OpenOccupancy
 
 
 **1. Create a conda virtual environment and activate it.**
@@ -49,7 +49,7 @@ pip install setuptools==59.5.0
 **8. Install occupancy pooling.**
 ```shell
 git clone https://github.com/Toytiny/RadarOcc.git
-cd OpenOccupancy
+cd RadarOcc
 export PYTHONPATH=“.”
 python setup.py develop
 ```
