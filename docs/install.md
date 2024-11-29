@@ -3,8 +3,8 @@
 
 **1. Create a conda virtual environment and activate it.**
 ```shell
-conda create -n OpenOccupancy python=3.7 -y
-conda activate OpenOccupancy
+conda create -n RadarOcc python=3.7 -y
+conda activate RadarOcc
 ```
 
 **2. Install PyTorch and torchvision (tested on torch==1.10.1 & cuda=11.3).**
@@ -48,7 +48,7 @@ pip install setuptools==59.5.0
 
 **8. Install occupancy pooling.**
 ```shell
-git clone https://github.com/JeffWang987/OpenOccupancy.git
+git clone https://github.com/Toytiny/RadarOcc.git
 cd OpenOccupancy
 export PYTHONPATH=“.”
 python setup.py develop
