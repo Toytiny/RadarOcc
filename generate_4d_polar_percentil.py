@@ -2,9 +2,11 @@ import os
 import numpy as np
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import torch
+from scipy.io import loadmat
 def process_file(clip, file, input_dir, output_dir):
     file_path = os.path.join(input_dir, file)
-    data = np.load(file_path)
+    mat_data = loadmat(file_path)
+    data = mat_data['arrDREA']
     d_dim, r_dim, a_dim, e_dim = data.shape
 
     idx = file.split("_")[-1].split(".")[0]
@@ -39,7 +41,7 @@ import gc
 
 def process_clip(clip):
     output_dir = os.path.join(output_base_dir, clip, "radar_tensor_percentile")
-    input_dir = os.path.join(input_base_dir, clip, "radar_polar_cube")
+    input_dir = os.path.join(input_base_dir, clip, "radar_tesseract")
     os.makedirs(output_dir, exist_ok=True)
     file_names = sorted(os.listdir(input_dir))
 
