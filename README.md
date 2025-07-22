@@ -126,7 +126,7 @@ python filter_kradar_fov.py
 c. Sparsification of radar raw data. For efficiency, we preprocess the radar raw data into the sparse format before feeding them into neural networks. The [generate_4d_polar_doppler.py](generate_4d_polar_doppler.py) preprocess the raw radar data using sidelobe-aware spatial sparsifying. Please run it with:
 ```
 cd ..
-python generate_4d_polar_percentil.py
+python generate_4d_polar_doppler.py
 ```
 
 d. Define your train/test/val set by generating .pkl files for the [mmdet3d](https://github.com/open-mmlab/mmdetection3d) framework, we provide a jupyter notebook [convert_kradar.ipynb](convert_kradar.ipynb) for this. Please run the code blocks in it. 
