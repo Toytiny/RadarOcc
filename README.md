@@ -123,7 +123,7 @@ python process_kradar.py
 python filter_kradar_fov.py
 ```
 
-c. Sparsification of radar raw data. For efficiency, we preprocess the radar raw data into the sparse format before feeding them into neural networks. The [generate_4d_polar_percentil.py](generate_4d_polar_percentil.py) preprocess the raw radar data using sidelobe-aware spatial sparsifying. Please run it with:
+c. Sparsification of radar raw data. For efficiency, we preprocess the radar raw data into the sparse format before feeding them into neural networks. The [generate_4d_polar_doppler.py](generate_4d_polar_doppler.py) preprocess the raw radar data using sidelobe-aware spatial sparsifying. Please run it with:
 ```
 cd ..
 python generate_4d_polar_percentil.py
